@@ -37,9 +37,9 @@ Un gimnasio tiene una lista de códigos de acceso de los socios que pagaron la m
         }
 
         if (autorizado) {
-            System.out.println("Acceso permitido. Bienvenido... ");
+            System.out.println("pagos al dia... ");
         } else {
-            System.out.println("Acceso denegado. Mensualidad pendiente...");
+            System.out.println("Acceso denegado...");
         }
 
         sc.close();

@@ -8,7 +8,11 @@ Un profesor tiene un arreglo con las notas finales de 30 estudiantes (ej: `3.5, 
 
     public static void main(String[] args) {
 
-        double[] notas = {3.5, 4.0, 5.0, 2.8, 5.0, 4.5, 3.9, 5.0};
+        double[] notas = {3.5, 4.0, 5.0, 2.8, 5.0, 4.5, 3.9, 5.0,
+            3.5, 5.0, 2.4, 4.3, 4.8, 5.0, 3.7, 4.1, 2.9,
+            3.3, 4.4, 5.0, 4.9, 3.6,
+            2.7, 4.0, 3.8, 5.0
+        };
 
         int contador = 0;
 
@@ -19,6 +23,6 @@ Un profesor tiene un arreglo con las notas finales de 30 estudiantes (ej: `3.5, 
             }
         }
 
-        System.out.println("Cantidad de estudiantes con nota 5.0: " + contador);
+        System.out.println(" Los estudiantes con nota de 5.0 son:  " +  contador);
     }
 }

@@ -18,34 +18,45 @@ En cada ciclo del ordenamiento, el programa debe imprimir cómo va quedando elar
 
     
 
+    
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Cantidad de libros: ");
         int n = sc.nextInt();
 
         int[] isbn = new int[n];
+        int usados = 0;
 
         for (int i = 0; i < n; i++) {
             System.out.print("Ingrese ISBN del libro " + (i + 1) + ": ");
-            isbn[i] = sc.nextInt();
-        }
+            int nuevo = sc.nextInt();
 
-        // Insertion Sort
-        for (int i = 1; i < n; i++) {
-
-            int key = isbn[i];
-            int j = i - 1;
-
-            while (j >= 0 && isbn[j] > key) {
-                isbn[j + 1] = isbn[j];
-                j--;
+            // Copiar la parte usada a un arreglo temporal
+            int[] temp = new int[usados + 1];
+            for (int k = 0; k < usados; k++) {
+                temp[k] = isbn[n - usados + k];
             }
 
-            isbn[j + 1] = key;
+            // Insertar ordenadamente en temp
+            int j = usados - 1;
+            while (j >= 0 && temp[j] > nuevo) {
+                temp[j + 1] = temp[j];
+                j--;
+            }
+            temp[j + 1] = nuevo;
 
-            System.out.println("Paso " + i + ": " + Arrays.toString(isbn));
+            usados++;
+
+            // Volver a llenar isbn: ceros a la izquierda, ordenados a la derecha
+            for (int k = 0; k < n - usados; k++) {
+                isbn[k] = 0;
+            }
+            for (int k = 0; k < usados; k++) {
+                isbn[n - usados + k] = temp[k];
+            }
+
+            System.out.println("Paso " + (i+1) + ": " + Arrays.toString(isbn));
         }
 
         System.out.println("\nArreglo ordenado:");

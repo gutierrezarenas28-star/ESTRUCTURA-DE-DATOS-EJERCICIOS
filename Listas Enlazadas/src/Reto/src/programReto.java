@@ -1,14 +1,8 @@
-/* 1. El Tren de Carga (Logística Ferroviaria)
-Diseña un sistema para gestionar los vagones de un tren de carga internacional.
-
-La Clase Vagon (Nodo): Debe contener contenido (String), pesoToneladas (double), origen (String) y destino (String).
-El Problema: El tren sale de una estación y se le van enganchando vagones al final.
-Reto: Implementa un método que recorra el tren y calcule el peso total de toda la carga transportada. */
-
+package Reto.src;
 
 import java.util.Scanner;
 
-public class Appp {
+public class programReto {
     public static void main(String[] args) throws Exception {
         
         Scanner sc = new Scanner(System.in);
@@ -22,6 +16,7 @@ public class Appp {
             System.out.println("==============================================");
             System.out.println("1. Nuevo vagon (Agregar al final del tren)");
             System.out.println("2. Calcular peso total de la carga");
+            System.out.println("3. Contar Nodos");
             System.out.println();
             System.out.println("0. Salir");
             System.out.println("==============================================");
@@ -52,6 +47,12 @@ public class Appp {
                     double pesoTotal = tren.calcularPesoTotal();
                     System.out.println("El peso total de la carga es: " + pesoTotal + " toneladas.");
                     break;
+
+                case 3:
+                    int numNodos= tren.contarNodos();
+                    System.out.println("el numero de nodos es: "+numNodos);
+                    break;
+
                 case 0:
 
                 
